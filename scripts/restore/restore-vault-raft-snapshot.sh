@@ -89,7 +89,7 @@ VAULT_TOKEN_VALUE="$(read_token)"
 echo "Restoring Vault raft snapshot from ${SNAPSHOT}"
 "${KUBECTL}" exec -i -n "${NAMESPACE}" -c "${CONTAINER_NAME}" "${POD_NAME}" -- \
   env "VAULT_ADDR=${VAULT_ADDR}" "VAULT_TOKEN=${VAULT_TOKEN_VALUE}" \
-  sh -ec 'cat >/tmp/platform-blueprints-vault-raft.snapshot && vault operator raft snapshot restore -force /tmp/platform-blueprints-vault-raft.snapshot && rm -f /tmp/platform-blueprints-vault-raft.snapshot' \
+  sh -ec 'cat >/tmp/flux-modules-vault-raft.snapshot && vault operator raft snapshot restore -force /tmp/flux-modules-vault-raft.snapshot && rm -f /tmp/flux-modules-vault-raft.snapshot' \
   < "${SNAPSHOT}"
 
 echo "Vault raft snapshot restore finished: ${NAMESPACE}/${POD_NAME}"

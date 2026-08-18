@@ -1,4 +1,4 @@
-# platform-blueprints
+# flux-modules
 
 Reusable Kubernetes, Flux, storage, edge, CRD schema, backup, restore, and
 validation blueprints for JorisJonkers-dev platform repositories.
@@ -16,7 +16,7 @@ may contain:
 - Documentation, examples, tests, CI, and release metadata for this artifact.
 
 Reusable host modules and Nix helpers live in
-`JorisJonkers-dev/nix-platform`. Consumer repositories continue to own host
+`JorisJonkers-dev/nixos-modules`. Consumer repositories continue to own host
 configuration, deploy nodes, inventories, secrets, app manifests, generated
 manifests, locks, and deployment workflows.
 
@@ -110,7 +110,7 @@ List and dry-run a manifest-driven remote filesystem backup:
 ```bash
 scripts/backup/backup-service-state.sh \
   --manifest examples/backup/manifest.tsv \
-  --output-dir /tmp/platform-blueprints-backup \
+  --output-dir /tmp/flux-modules-backup \
   --dry-run
 ```
 
@@ -119,7 +119,7 @@ Capture service-native snapshot plugins declared by the consumer:
 ```bash
 scripts/backup/backup-service-snapshots.sh \
   --plugins examples/backup/snapshot-plugins.tsv \
-  --output-dir /tmp/platform-blueprints-snapshots \
+  --output-dir /tmp/flux-modules-snapshots \
   --dry-run
 ```
 

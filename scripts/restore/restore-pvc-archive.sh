@@ -48,7 +48,7 @@ metadata:
   name: ${POD_NAME}
   namespace: ${NAMESPACE}
   labels:
-    app.kubernetes.io/managed-by: platform-blueprints-restore-toolkit
+    app.kubernetes.io/managed-by: flux-modules-restore-toolkit
 spec:
   restartPolicy: Never
   containers:

@@ -21,7 +21,7 @@ jobs:
       overlay-paths: |
         path/to/flux/overlay
       mode: strict
-      crd-catalog-source: JorisJonkers-dev/platform-blueprints
+      crd-catalog-source: JorisJonkers-dev/flux-modules
       crd-catalog-ref: v1.1.0
 ```
 
