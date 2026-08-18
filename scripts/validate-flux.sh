@@ -178,7 +178,7 @@ if [[ "${enable_helm}" == "true" ]]; then
   fi
 fi
 
-render_output="$(mktemp "${TMPDIR:-/tmp}/platform-blueprints-flux.XXXXXX.yaml")"
+render_output="$(mktemp "${TMPDIR:-/tmp}/flux-modules-flux.XXXXXX.yaml")"
 trap 'rm -f "${render_output}"' EXIT
 
 echo "==> kustomize build ${cluster_path}"
@@ -203,7 +203,7 @@ if [[ "${enable_helm}" == "true" ]]; then
 fi
 
 echo "==> drop non-resource documents before kubeconform"
-stripped_output="$(mktemp "${TMPDIR:-/tmp}/platform-blueprints-flux-stripped.XXXXXX.yaml")"
+stripped_output="$(mktemp "${TMPDIR:-/tmp}/flux-modules-flux-stripped.XXXXXX.yaml")"
 strip_non_resource_documents "${render_output}" "${stripped_output}"
 rm -f "${render_output}"
 render_output="${stripped_output}"

@@ -221,7 +221,7 @@ check_legacy_brand_references() {
 
 check_output_names() {
   local output_name_regex
-  output_name_regex="platform-blueprints-platform""-blueprints|platform""Blueprints[.]platform""Blueprints"
+  output_name_regex="flux-modules-platform""-blueprints|platform""Blueprints[.]platform""Blueprints"
   if grep --line-number -R -E "${output_name_regex}" README.md docs scripts tests packs examples skeletons fixtures schemas .github; then
     record_failure "Found doubled platform marker in public outputs or docs"
   fi
@@ -229,7 +229,7 @@ check_output_names() {
 
 check_vault_policy_compiler() {
   local tmpdir
-  tmpdir="$(mktemp -d "${TMPDIR:-/tmp}/platform-blueprints-vault.XXXXXX")"
+  tmpdir="$(mktemp -d "${TMPDIR:-/tmp}/flux-modules-vault.XXXXXX")"
   trap 'rm -rf "${tmpdir}"' RETURN
 
   python3 scripts/vault/compile-vault-bootstrap-policy.py \

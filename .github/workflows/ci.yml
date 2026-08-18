@@ -81,7 +81,7 @@
       'overlay-paths': |
         tests/fixtures/flux-render-good
       'mode': 'strict'
-      'crd-catalog-source': 'JorisJonkers-dev/platform-blueprints'
+      'crd-catalog-source': 'JorisJonkers-dev/flux-modules'
       'crd-catalog-ref': '${{ github.head_ref || github.ref_name }}'
 
   'pipeline-complete':

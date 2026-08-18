@@ -132,7 +132,7 @@ require_command "${KUBECTL}"
 require_command "${CURL}"
 "${KUBECTL}" get service -n "${NAMESPACE}" "${SERVICE}" >/dev/null
 
-port_forward_log="$(mktemp "${TMPDIR:-/tmp}/platform-blueprints-port-forward.XXXXXX.log")"
+port_forward_log="$(mktemp "${TMPDIR:-/tmp}/flux-modules-port-forward.XXXXXX.log")"
 cleanup() {
   if [[ -n "${PORT_FORWARD_PID:-}" ]]; then
     kill "${PORT_FORWARD_PID}" >/dev/null 2>&1 || true

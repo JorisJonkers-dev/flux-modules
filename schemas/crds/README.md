@@ -1,7 +1,7 @@
 # Pinned CRD Schema Catalog
 
 This catalog is the offline default used by `scripts/validate-flux-render.sh`.
-It pins the CRD groups that platform-blueprints commonly emits so kubeconform
+It pins the CRD groups that flux-modules commonly emits so kubeconform
 does not need to fetch CRD schemas during validation.
 
 Pin date: 2026-06-10
