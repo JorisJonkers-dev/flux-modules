@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/JorisJonkers-dev/flux-modules/compare/v1.5.0...v1.5.1) (2026-10-15)
+
+
+### Bug Fixes
+
+* **restore:** hand the Vault token over stdin, not on the exec command line ([#14](https://github.com/JorisJonkers-dev/flux-modules/issues/14)) ([b3315e1](https://github.com/JorisJonkers-dev/flux-modules/commit/b3315e17cf14c53a694fd40a407bacaa8a5c59ef))
+
 ## [1.5.0](https://github.com/JorisJonkers-dev/platform-blueprints/compare/v1.4.0...v1.5.0) (2026-06-29)
 
 
