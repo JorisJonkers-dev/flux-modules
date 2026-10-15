@@ -87,9 +87,11 @@ VAULT_TOKEN_VALUE="$(read_token)"
 "${KUBECTL}" wait -n "${NAMESPACE}" --for=condition=Ready "pod/${POD_NAME}" --timeout=180s >/dev/null
 
 echo "Restoring Vault raft snapshot from ${SNAPSHOT}"
-"${KUBECTL}" exec -i -n "${NAMESPACE}" -c "${CONTAINER_NAME}" "${POD_NAME}" -- \
-  env "VAULT_ADDR=${VAULT_ADDR}" "VAULT_TOKEN=${VAULT_TOKEN_VALUE}" \
-  sh -ec 'cat >/tmp/flux-modules-vault-raft.snapshot && vault operator raft snapshot restore -force /tmp/flux-modules-vault-raft.snapshot && rm -f /tmp/flux-modules-vault-raft.snapshot' \
-  < "${SNAPSHOT}"
+# The token is the first line of stdin and the snapshot follows it, so the token never appears in
+# the exec command line, where a process list on the node would show it.
+{ printf '%s\n' "${VAULT_TOKEN_VALUE}"; cat "${SNAPSHOT}"; } |
+  "${KUBECTL}" exec -i -n "${NAMESPACE}" -c "${CONTAINER_NAME}" "${POD_NAME}" -- \
+    env "VAULT_ADDR=${VAULT_ADDR}" \
+    sh -ec 'IFS= read -r VAULT_TOKEN; export VAULT_TOKEN; cat >/tmp/flux-modules-vault-raft.snapshot && vault operator raft snapshot restore -force /tmp/flux-modules-vault-raft.snapshot && rm -f /tmp/flux-modules-vault-raft.snapshot'
 
 echo "Vault raft snapshot restore finished: ${NAMESPACE}/${POD_NAME}"
