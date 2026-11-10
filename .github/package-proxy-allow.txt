@@ -1,0 +1,4 @@
+packs/*/source.yaml chart repository URL is a substitution variable set by the consuming cluster; moving chart sources behind the proxy is JorisJonkers-dev/estate#361
+packs/flux-core/*/source.yaml chart repository URL is a substitution variable or upstream; moving chart sources behind the proxy is JorisJonkers-dev/estate#361
+packs/observability/helm-repositories.yaml chart repository URLs are substitution variables set by the consuming cluster; moving chart sources behind the proxy is JorisJonkers-dev/estate#361
+tests/fixtures/** test fixtures for the render checks, never applied to a cluster
