@@ -18,7 +18,7 @@
 
 'jobs':
   'repository-hygiene':
-    'uses': 'JorisJonkers-dev/github-workflows/.github/workflows/repository-hygiene-guard.yml@a68da7988585d307c147a320dbd53f76b19943c4' # v0.46.0
+    'uses': 'JorisJonkers-dev/github-workflows/.github/workflows/repository-hygiene-guard.yml@38aa4e9ea4a2adfdcfc210967f540023e05bca07' # v0.48.0
     'with':
       'package-proxy-guard': 'enforce'
     'secrets': 'inherit'
