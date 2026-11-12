@@ -76,7 +76,7 @@
 
   'flux-render':
     'name': 'Flux render reusable'
-    'uses': 'JorisJonkers-dev/github-workflows/.github/workflows/flux-render-validate.yml@38aa4e9ea4a2adfdcfc210967f540023e05bca07' # v0.48.0
+    'uses': 'JorisJonkers-dev/github-workflows/.github/workflows/flux-render-validate.yml@48fcba8b143567e12716f4b77b9a3ab211719ffd' # v0.50.1
     'with':
       'overlay-paths': |
         tests/fixtures/flux-render-good
