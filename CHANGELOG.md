@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/JorisJonkers-dev/flux-modules/compare/v1.5.1...v1.5.2) (2026-11-12)
+
+
+### Bug Fixes
+
+* **hygiene:** never cancel a run of the required hygiene checks ([#22](https://github.com/JorisJonkers-dev/flux-modules/issues/22)) ([9d0ab3c](https://github.com/JorisJonkers-dev/flux-modules/commit/9d0ab3c0d6020e335b62cf4244938456dd6fc4da))
+
 ## [1.5.1](https://github.com/JorisJonkers-dev/flux-modules/compare/v1.5.0...v1.5.1) (2026-10-15)
 
 
